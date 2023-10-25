@@ -1,9 +1,10 @@
 import React from 'react'
+import Cardapio from '../../components/Cardapio'
 
 const Home = () => {
   return (
     <>
-      <h1>Cardápio</h1>
+      <Cardapio />
     </>
   )
 }
