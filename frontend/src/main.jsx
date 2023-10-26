@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import LogIn from './pages/LogIn/index.jsx';
+import LogIn from './pages/LogIn/Adm/index.jsx';
 import Home from './pages/Home/index.jsx';
 
 

@@ -19,7 +19,8 @@ const itemController = {
     },
     getAll: async (req, res) => {
         try {
-            const items = await ItemModel.find();
+            const search = req.query.search || "";
+            const items = await ItemModel.find({ nome: {$regex:search, $options: "i"}});
             res.json(items);
         } catch (error) {
             console.log(error)
