@@ -25,7 +25,9 @@ const SearchBar = () => {
 
 
   return (
-    <div><input type='text' value={pesquisa} onChange={e => setPesquisa(e.target.value)}/> <AiOutlineSearch /></div>
+    <div><input type='text' value={pesquisa} onChange={e => setPesquisa(e.target.value)}/> <span class="material-symbols-outlined">
+    search
+    </span></div>
   )
 }
 

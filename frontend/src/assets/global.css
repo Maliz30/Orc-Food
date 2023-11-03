@@ -3,6 +3,13 @@
     padding: 0;
     margin: 0;
     font-size: auto;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root{
+    --laranja: #D96725;
+    --branco: #F0F0F2;
+    --bege: #FFFBDC;
 }
 
 body{
