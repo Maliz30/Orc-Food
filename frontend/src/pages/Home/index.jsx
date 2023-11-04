@@ -34,7 +34,10 @@ const Home = () => {
           search
         </span>
       </div>
+      {!pesquisa ? 
       <Categorias />
+       : ''}
+      
       <Cardapio item={items} />
     </>
   )
