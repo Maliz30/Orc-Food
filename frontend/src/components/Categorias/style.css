@@ -1,8 +1,14 @@
+.categorias-section{
+    margin: 46px 0;
+}
+
 .categorias-section-title{
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     color: var(--marrom);
     font-style: normal;
+    margin-bottom: 31px;
+    
 }
 
 .categorias-cards-wrapper{
