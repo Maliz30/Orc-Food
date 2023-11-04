@@ -2,7 +2,7 @@
     height: 56px;
     padding: 4px;
     
-    margin: 95px calc(100%/2 - 25%) 0;
+    margin: 95px calc(100%/2 - 20%) 0;
     background-color: var(--bege);
     display: grid;
     grid-template-columns: 48px 1fr 48px;
