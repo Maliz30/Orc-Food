@@ -4,3 +4,11 @@
     color: var(--marrom);
     font-style: normal;
 }
+
+.categorias-cards-wrapper{
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: 194px 194px;
+    gap: 20px 100px;
+}
