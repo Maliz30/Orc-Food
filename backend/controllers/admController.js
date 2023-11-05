@@ -48,7 +48,7 @@ const admController = {
 
     },
 
-    /* login: async(req, res) => {
+    login: async(req, res) => {
         const {name, password} = req.body
 
         if(!name || !password ){
@@ -56,7 +56,7 @@ const admController = {
             return
         }
 
-        const adm = await User.findOne({name: name})
+        const adm = await AdmModel.findOne({name: name})
 
         if(!adm){
             res.status(422).json({
@@ -71,10 +71,11 @@ const admController = {
             res.status(422).json({
                 message: "senha inválida!"
             })
+            return
         }
 
         await createUserToken(adm, req, res)
-    } */
+    }
 }
 
 
