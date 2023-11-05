@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Cardapio from '../../components/Cardapio'
 //import SearchBar from '../../components/SearchBar'
 import axios from 'axios';
-import { AiOutlineSearch } from "react-icons/ai"
+import Categorias from '../../components/Categorias';
 import './style.css'
 
 const Home = () => {
@@ -30,10 +30,14 @@ const Home = () => {
     <>
       <div className='search-bar-wrapper'>
         <div></div>
-        <input type='text' value={pesquisa} onChange={e => setPesquisa(e.target.value)} className='search-bar-input' placeholder='busque por um item do cardápio'/> <span class="material-symbols-outlined">
+        <input type='text' value={pesquisa} onChange={e => setPesquisa(e.target.value)} className='search-bar-input' placeholder='busque por um item do cardápio'/> <span className="material-symbols-outlined">
           search
         </span>
       </div>
+      {!pesquisa ? 
+      <Categorias />
+       : ''}
+      
       <Cardapio item={items} />
     </>
   )

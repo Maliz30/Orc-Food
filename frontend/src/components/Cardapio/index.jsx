@@ -6,7 +6,7 @@ import "./style.css"
 const Cardapio = props => {
     return (
         <section className='cardapio-wrapper'>
-            <h2>Cardápio: </h2>
+            <h2 className='cardapio-section-title'>Cardápio: </h2>
             <div className='items-wrapper'>
                 {
                     props.item.map(item =>   
