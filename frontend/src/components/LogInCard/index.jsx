@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Context } from '../../context/UserContext';
+
 
 const LoginCard = () => {
     const [nome, setNome] = useState("");
     const [senha, setSenha] = useState("");
-
-    const logar = () => {}
+    const { loginAdm } = useContext(Context)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        loginAdm({
+            name: nome,
+            password: senha
+        })
+    }
 
     return (
         <section>
             <span className='Login-title'>Entre aqui</span>
-            <div>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="input-nome">Email</label>
                     <input type='text' value={nome} onChange={e => setNome(e.target.value)} name='input-nome' className='input-text-form' />
@@ -19,10 +26,10 @@ const LoginCard = () => {
                     <label htmlFor='input-senha'>Senha</label>
                     <input type="text" value={senha} onChange={e => setSenha(e.target.value)} name='input-senha' className='input-text-form' />
                 </div>
-            </div>
-            <div>
-                <Link to="/">Entrar</Link>
-            </div>
+                <div>
+                    <input type="submit" value="Entrar" />
+                </div>
+            </form>
         </section>
     )
 }
