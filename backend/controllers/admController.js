@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 
 // helpers
 const createUserToken = require('../helpers/create-user-token')
+const getToken = require('../helpers/get-token')
 
 const admController = {
     register: async(req, res) => {
@@ -75,6 +76,39 @@ const admController = {
         }
 
         await createUserToken(adm, req, res)
+    },
+
+    checkAdm: async(req, res) => {
+        let currentUser
+
+        console.log(req.headers.authorization)
+
+        if(req.headers.authorization){
+            const token = getToken(req);
+            const decoded = jwt.verify(token, "segredosecreto")
+
+            currentUser = await AdmModel.findById(decoded.id)
+
+            currentUser.password = undefined
+        } else {
+            currentUser = null
+        }
+
+        res.status(200).send(currentUser)
+    },
+
+    getAdmById: async(req, res) => {
+        const id = req.params.id
+        const adm = await AdmModel.findById(id).select("-password")
+
+        if(!adm){
+            res.status(422).json({
+                message: "Usuário não encontrado!"
+            })
+            return
+        }
+
+        res.status(200).json({ adm })
     }
 }
 
