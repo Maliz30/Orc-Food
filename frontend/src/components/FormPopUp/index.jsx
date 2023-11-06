@@ -7,13 +7,30 @@ import { categorias } from '../../categorias'
 
 const FormPopUp = props => {
     const cat = categorias;
-    const handleSubmit = (e) => {
+    const handleSubmitCreate = (e) => {
         // Prevent the browser from reloading the page
         e.preventDefault();
         // Read the form data
         const form = e.target;
         const formData = new FormData(form);
-        console.log(formData)
+        const formJson = Object.fromEntries(formData.entries())
+        const body = {
+            nome: formJson.titulo,
+            descricao: formJson.detalhes,
+            preco: formJson.preco,
+            categoria: formJson.categoria
+        }
+
+        postItem(body)
+        
+    }
+
+    async function postItem(body){
+        const data = await api.post('api/items', body)
+        .then((response) => {
+            return response.data
+        })
+        console.log(data)
     }
     return (props.type == 'edit' ?
         <div>
@@ -25,7 +42,7 @@ const FormPopUp = props => {
             <div>
                 <img source={Create} />
                 <h3>Adicionar item</h3>
-                <form action="post">
+                <form action="post" onSubmit={handleSubmitCreate}>
                     <label htmlFor="titulo">Título</label>
                     <input type="text" name="titulo" placeholder='Nome do item' />
                     <label htmlFor="categoria">Categoria</label>
@@ -39,6 +56,8 @@ const FormPopUp = props => {
                     <input type="number" name="preco" placeholder='R$ XX,XX' />
                     <label htmlFor="detalhes"></label>
                     <input type="text" name="detalhes" placeholder='Escreva os detalhes do item' />
+
+                    <input type="submit" value="Adicionar" />
                 </form>
             </div>
             :
