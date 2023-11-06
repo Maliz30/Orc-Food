@@ -4,6 +4,7 @@ import { Context } from '../../context/UserContext'
 import Delete from '../../assets/img/delete.svg'
 import Edit from '../../assets/img/edit.svg'
 import PopUp from '../PopUp'
+import FormPopUp from '../FormPopUp'
 
 const ItemCard = props => {
     const [showDelete, setShowDelete] = useState(false)
@@ -24,12 +25,21 @@ const ItemCard = props => {
                 </div>
                 {authenticated ? <div className='buttons-wrapper'>
                     <button className='adm-button' onClick={() => {setShowDelete(true)}}><img src={Delete} alt="" /></button>
-                    <button className='adm-button'><img src={Edit} alt="" /></button>
+                    <button className='adm-button'  onClick={() => {setShowEdit(true)}}><img src={Edit} alt="" /></button>
                 </div> : <p></p>}
             </div>
+
+            {/* PopUps dos itens */}
             <PopUp trigger={showDelete} setTrigger={setShowDelete}>
-                <h3>Teste Delete</h3>
+                <FormPopUp type='delete' />
             </PopUp>
+
+            <PopUp trigger={showEdit} setTrigger={setShowEdit}>
+                <FormPopUp type='edit' />
+            </PopUp>
+
+
+
             <div className='text-section desc-item'>
                 {props.item.descricao}
             </div>
