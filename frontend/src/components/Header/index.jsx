@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './style.css'
 import Logo from '../../assets/img/logo.png'
 import { Context } from '../../context/UserContext'
+import Message from '../../components/Message'
 
 const Header = () => {
   const {authenticated, logout} = useContext(Context)
@@ -15,7 +16,7 @@ const Header = () => {
           <Link to="/login" className='header-button login'>Login</Link> :
           <button onClick={logout} className='header-button logout'>Logout</button>
         }
-        
+        <Message />
     </div>
   )
 }

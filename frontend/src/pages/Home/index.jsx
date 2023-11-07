@@ -4,6 +4,7 @@ import Cardapio from '../../components/Cardapio'
 import axios from 'axios';
 import Categorias from '../../components/Categorias';
 import './style.css'
+import Message from '../../components/Message'
 
 const Home = () => {
   const [items, setItems] = useState([])
@@ -27,7 +28,7 @@ const Home = () => {
 
   }, [pesquisa]);
   return (
-    <>
+    <section className='home'>
       <div className='search-bar-wrapper'>
         <div></div>
         <input type='text' value={pesquisa} onChange={e => setPesquisa(e.target.value)} className='search-bar-input' placeholder='busque por um item do cardápio'/> <span className="material-symbols-outlined">
@@ -37,9 +38,9 @@ const Home = () => {
       {!pesquisa ? 
       <Categorias />
        : ''}
-      
+      <Message />
       <Cardapio item={items} />
-    </>
+    </section>
   )
 }
 

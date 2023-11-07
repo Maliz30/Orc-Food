@@ -20,6 +20,7 @@ const Message = () => {
                 if(type == 'success'){
                     navigate('/')
                 }
+                window.location.reload()
             }, 2000) 
         })
     }, [])

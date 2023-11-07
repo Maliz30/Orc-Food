@@ -10,13 +10,14 @@
 }
 
 .message-wrapper{
-    padding: 20px;
+    padding: 10px;
     min-width: 40%;
+    font-size: 14px;
     background-color: var(--branco);
-    border: 2px solid var(--cinza);
     border-radius: 2px;
     margin-bottom: 1em;
     box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    padding-bottom: 1em;
 }
 
 @keyframes progressAnimationStrike {
@@ -26,7 +27,7 @@
 
 .progress-container {
     margin:  auto;
-    width: 100%;
+    width: 80%;
     text-align: center;
     margin-bottom: 1em;
   }

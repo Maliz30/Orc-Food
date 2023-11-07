@@ -30,9 +30,13 @@ export default function useAuth(){
     }
 
     function logout(){
+        let msgText = 'Logout realizado com sucesso!'
+        let msgType = 'success'
+        setFlashMessage(msgText, msgType)
 
         setAuthenticated(false);
         api.defaults.headers.Authorization = undefined
+        localStorage.removeItem('token')
     }
 
     async function loginAdm(adm){
