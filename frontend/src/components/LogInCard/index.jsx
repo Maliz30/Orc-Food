@@ -14,7 +14,6 @@ const LoginCard = () => {
             name: nome,
             password: senha
         })
-        navigate('/')
     }
 
     return (

@@ -1,8 +1,10 @@
 import api from '../utils/api'
+import useFlashMessage from './useFlashMessage'
 
 import {useState, useEffect} from 'react'
 
 export default function useAuth(){
+    const {setFlashMessage} = useFlashMessage()
     const [authenticated, setAuthenticated] = useState(false)
 
     useEffect(() => {
@@ -28,11 +30,14 @@ export default function useAuth(){
     }
 
     function logout(){
+
         setAuthenticated(false);
         api.defaults.headers.Authorization = undefined
     }
 
     async function loginAdm(adm){
+        let msgText = 'Login realizado com sucesso!'
+        let msgType = 'success'
         try {
             const data = await api.post('api/adm/login', adm)
             .then((response) => {
@@ -42,8 +47,11 @@ export default function useAuth(){
             await authUser(data)
             console.log(authenticated)
         } catch (error) {
-            console.log(error)
+            msgText = error.response.data.message
+            msgType = 'error'
         }
+
+        setFlashMessage(msgText, msgType)
     }
 
     return { authenticated, register, loginAdm, logout }
