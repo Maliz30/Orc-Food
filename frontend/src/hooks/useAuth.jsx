@@ -27,6 +27,11 @@ export default function useAuth(){
         localStorage.setItem('token', JSON.stringify(data.token))
     }
 
+    function logout(){
+        setAuthenticated(false);
+        api.defaults.headers.Authorization = undefined
+    }
+
     async function loginAdm(adm){
         try {
             const data = await api.post('api/adm/login', adm)
@@ -41,5 +46,5 @@ export default function useAuth(){
         }
     }
 
-    return { authenticated, register, loginAdm }
+    return { authenticated, register, loginAdm, logout }
 }
