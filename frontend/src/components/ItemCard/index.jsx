@@ -4,7 +4,9 @@ import { Context } from '../../context/UserContext'
 import Delete from '../../assets/img/delete.svg'
 import Edit from '../../assets/img/edit.svg'
 import PopUp from '../PopUp'
-import FormPopUp from '../FormPopUp'
+import PopUpDelete from '../FormPopUp/delete'
+import PopUpEdit from '../FormPopUp/edit'
+
 
 const ItemCard = props => {
     const [showDelete, setShowDelete] = useState(false)
@@ -31,11 +33,11 @@ const ItemCard = props => {
 
             {/* PopUps dos itens */}
             <PopUp trigger={showDelete} setTrigger={setShowDelete}>
-                <FormPopUp type='delete' />
+                <PopUpDelete id={props.key}/>
             </PopUp>
 
             <PopUp trigger={showEdit} setTrigger={setShowEdit}>
-                <FormPopUp type='edit' />
+                <PopUpEdit id={props.key}/>
             </PopUp>
 
 

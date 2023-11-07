@@ -4,7 +4,7 @@ import PopUp from '../PopUp'
 
 import "./style.css"
 import { Context } from '../../context/UserContext'
-import FormPopUp from '../FormPopUp'
+import PopUpCreate from '../FormPopUp/create'
 
 const Cardapio = props => {
     const [showCreate, setShowCreate] = useState(false)
@@ -25,7 +25,7 @@ const Cardapio = props => {
 
             {/* PopUps dos itens */}
             <PopUp trigger={showCreate} setTrigger={setShowCreate}>
-                <FormPopUp type={'create'} />
+                <PopUpCreate type={'create'} />
             </PopUp>
         </section>
     )

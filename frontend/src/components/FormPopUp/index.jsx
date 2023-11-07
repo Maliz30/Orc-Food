@@ -25,6 +25,10 @@ const FormPopUp = props => {
         
     }
 
+    const handleSubmitEdit = (e) => {
+
+    }
+
     async function postItem(body){
         const data = await api.post('api/items', body)
         .then((response) => {
@@ -35,8 +39,24 @@ const FormPopUp = props => {
     return (props.type == 'edit' ?
         <div>
             <img source={Edit} />
-            <h3>Editar item</h3>
-            <form action="put" onSubmit={handleSubmit}></form>
+                <h3>Editar item</h3>
+                <form action="post" onSubmit={handleSubmitCreate}>
+                    <label htmlFor="titulo">Título</label>
+                    <input type="text" name="titulo" placeholder='Nome do item' />
+                    <label htmlFor="categoria">Categoria</label>
+                    <select name="categoria" defaultValue= "default">
+                        <option value="default" disabled>Selecione uma categoria</option>
+                        {cat.map((categoria, index) => (
+                            <option key={index} value={categoria}>{categoria}</option>
+                        ))}
+                    </select>
+                    <label htmlFor="preco"></label>
+                    <input type="number" name="preco" placeholder='R$ XX,XX' />
+                    <label htmlFor="detalhes"></label>
+                    <input type="text" name="detalhes" placeholder='Escreva os detalhes do item' />
+
+                    <input type="submit" value="Adicionar" />
+                </form>
         </div>
         : props.type == 'create' ?
             <div>
