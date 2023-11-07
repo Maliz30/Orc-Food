@@ -81,8 +81,6 @@ const admController = {
     checkAdm: async(req, res) => {
         let currentUser
 
-        console.log(req.headers.authorization)
-
         if(req.headers.authorization){
             const token = getToken(req);
             const decoded = jwt.verify(token, "segredosecreto")
@@ -109,6 +107,13 @@ const admController = {
         }
 
         res.status(200).json({ adm })
+    },
+
+    edit: async (req, res) => {
+        res.status(200).json({
+            message: "Deu certo update!"
+        })
+        return
     }
 }
 
