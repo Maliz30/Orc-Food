@@ -33,11 +33,11 @@ const ItemCard = props => {
 
             {/* PopUps dos itens */}
             <PopUp trigger={showDelete} setTrigger={setShowDelete}>
-                <PopUpDelete id={props.key}/>
+                <PopUpDelete id={props.id}/>
             </PopUp>
 
             <PopUp trigger={showEdit} setTrigger={setShowEdit}>
-                <PopUpEdit id={props.key}/>
+                <PopUpEdit id={props.id}/>
             </PopUp>
 
 

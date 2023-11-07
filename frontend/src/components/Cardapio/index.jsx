@@ -18,7 +18,7 @@ const Cardapio = props => {
             <div className='items-wrapper'>
                 {
                     props.item.map(item =>
-                        <ItemCard key={item._id} item={item} />
+                        <ItemCard key={item._id} item={item} id={item._id}/>
                     )
                 }
             </div>
