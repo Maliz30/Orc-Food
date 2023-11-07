@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginCard = () => {
+    const navigate = useNavigate()
     const [nome, setNome] = useState("");
     const [senha, setSenha] = useState("");
     const { loginAdm } = useContext(Context)
@@ -12,6 +14,7 @@ const LoginCard = () => {
             name: nome,
             password: senha
         })
+        navigate('/')
     }
 
     return (
@@ -27,7 +30,7 @@ const LoginCard = () => {
                     <input type="text" value={senha} onChange={e => setSenha(e.target.value)} name='input-senha' className='input-text-form' />
                 </div>
                 <div>
-                    <input type="submit" value="Entrar" />
+                    <input type="submit" value="Entrar"/>
                 </div>
             </form>
         </section>
