@@ -51,7 +51,7 @@ const PopUpEdit = props => {
             .then((response) => {
                 return response.data
             })
-        console.log(data)
+            .then(window.location.reload())
     }
     return <div>
         <img source={Edit} />
@@ -89,7 +89,7 @@ const PopUpEdit = props => {
                 onChange={e => { setDetalhes(e.target.value) }}
             />
 
-            <input type="submit" value="Adicionar" />
+            <input type="submit" value="Editar" />
         </form>
     </div>
 }

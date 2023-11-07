@@ -28,7 +28,7 @@ const PopUpCreate = () => {
             .then((response) => {
                 return response.data
             })
-        console.log(data)
+            .then(window.location.reload())
     }
     return <div>
         <img source={Create} />
