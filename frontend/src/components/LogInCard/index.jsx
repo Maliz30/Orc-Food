@@ -30,9 +30,8 @@ const LoginCard = () => {
                     <label htmlFor='input-senha' className='loginCard-input-label'>Senha</label>
                     <input type="text" value={senha} onChange={e => setSenha(e.target.value)} name='input-senha' className='loginCard-input-text-form' />
                 </div>
-                <div >
-                    <input className='loginCard-button' type="submit" value="Entrar"/>
-                </div>
+                <input className='loginCard-button' type="submit" value="Entrar"/>
+                
             </form>
         </section>
     )
