@@ -1,4 +1,3 @@
-import React from 'react'
 import LoginCard from '../../components/LogInCard'
 import Logo from '../../assets/img/logo.png'
 import Burger from '../../assets/img/burger.png'
