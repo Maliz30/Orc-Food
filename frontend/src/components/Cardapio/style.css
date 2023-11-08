@@ -6,6 +6,13 @@
     margin: 46px 0;
 }
 
+.cardapio-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 31px;
+}
+
 .items-wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -18,5 +25,15 @@
     font-family: 'Playfair Display';
     font-size: 40px;
     color: var(--marrom);
-    margin-bottom: 31px;
+}
+
+.add-items-button{
+    background-color: var(--laranja);
+    color: var(--branco);
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 100px;
+    cursor: pointer;
 }

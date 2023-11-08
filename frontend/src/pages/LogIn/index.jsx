@@ -1,4 +1,5 @@
 import LoginCard from '../../components/LogInCard'
+import Message from '../../components/Message'
 import Logo from '../../assets/img/logo.png'
 import Burger from '../../assets/img/burger.png'
 import "./style.css"
@@ -10,6 +11,7 @@ const LogIn = () => {
         <img src={Logo} alt="Logo do Orc'Food" className='login-logo'/>
         <img src={Burger} alt="Desenho de um Hamburger" className='login-burger' />
       </div>
+      <Message />
       <LoginCard />
     </div>
   )

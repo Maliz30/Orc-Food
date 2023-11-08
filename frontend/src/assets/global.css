@@ -14,9 +14,11 @@
     --bege: #FFFBDC;
     --marrom: #652E08;
     --roxo: #492359;
+    --lils: #D8BDF2;
+    --cinza: #7E7E7F;
+    --vermelho: #DA2F2F;
 }
 
 body{
-    width: 100vw;
     height: 100vh;
 }
