@@ -1,0 +1,27 @@
+.login-box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background: url('../../assets/img/background.png') no-repeat;
+    background-size: cover;
+    background-position: top;
+
+}
+
+.login-image-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-logo{
+    width: 20em;
+    margin: 4em 0 0 4em;
+}
+
+.login-burger{
+    width: 35em;
+    margin: 0 0 0 16em;
+}

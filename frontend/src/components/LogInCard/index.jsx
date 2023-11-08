@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import './style.css'
+
 const LoginCard = () => {
     const [nome, setNome] = useState("");
     const [senha, setSenha] = useState("");
@@ -8,20 +10,20 @@ const LoginCard = () => {
     const logar = () => {}
 
     return (
-        <section>
-            <span className='Login-title'>Entre aqui</span>
-            <div>
-                <div>
-                    <label htmlFor="input-nome">Email</label>
-                    <input type='text' value={nome} onChange={e => setNome(e.target.value)} name='input-nome' className='input-text-form' />
+        <section className='loginCard-box'>
+            <span className='loginCard-title'>Entre aqui</span>
+            <div className='loginCard-input-area'>
+                <div className='loginCard-input-area-individual'>
+                    <label htmlFor="input-nome" className='loginCard-input-label'>Email</label>
+                    <input type='text' value={nome} onChange={e => setNome(e.target.value)} name='input-nome' className='loginCard-input-text-form' />
                 </div>
-                <div>
-                    <label htmlFor='input-senha'>Senha</label>
-                    <input type="text" value={senha} onChange={e => setSenha(e.target.value)} name='input-senha' className='input-text-form' />
+                <div className='loginCard-input-area-individual'>
+                    <label htmlFor='input-senha' className='loginCard-input-label'>Senha</label>
+                    <input type="text" value={senha} onChange={e => setSenha(e.target.value)} name='input-senha' className='loginCard-input-text-form' />
                 </div>
             </div>
-            <div>
-                <Link to="/">Entrar</Link>
+            <div >
+                <Link className='loginCard-button' to="/">Entrar</Link>
             </div>
         </section>
     )
