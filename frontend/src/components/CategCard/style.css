@@ -1,0 +1,29 @@
+.categoria-card{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.cat-card-img{
+    background-image: url('../../assets/img/defaultCat.png');
+    background-color: #dadce0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    height: 100%;
+    width: 100%;
+
+    border-radius: 12px 12px 0 0;
+}
+
+.categoria-label{
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+    background-color: #f0f0f2;
+}

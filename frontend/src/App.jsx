@@ -1,7 +1,7 @@
 
 import Header from './components/Header'
 import { Outlet } from 'react-router-dom'
-import Carrinho from './components/Carrinho'
+import './style.css'
 
 function App() {
 
@@ -11,7 +11,9 @@ function App() {
     <>
     {/* <Carrinho/> */}
     <Header />
-    <Outlet />
+    <section className='section-format'>
+      <Outlet />
+    </section>
     </>
   )
 }
